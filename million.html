@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html,charset=utf-8' />
+    <meta http-equiv='Content-Type' name='viewport' content='width=device-width' />
+    <link rel='shortcut icon' href='http://on9g2lqza.bkt.clouddn.com/million.png' />
+    <title>MILLION -- Midi Download Link For WalkBand
+    </title>
+  </head>
+  <body>
+    <header>
+      <a href='https://sundawning.github.io/midi-download-link-for-walkband/million.html' title='This project can also be offline which I have used half a year. Now I share this project online for you.'>Online
+      </a>
+      <a href='https://github.com/SunDawning/midi-download-link-for-walkband' title='Some advices for how to use this project well.'>Quickstart
+      </a>
+      <a href='https://github.com/SunDawning/midi-download-link-for-walkband/issues' title='Create you new issue(problem) if you want this project to become better for you.'>Feedback
+      </a>
+      <button onclick='MILLION$toggleSupport();'>Support
+      </button>
+      <div id='support'>
+        <div>Upvote, Follow or Reblog my article if you want me to continue maintaining this project, that is all.
+        </div>
+        <div>
+          <a href='https://steemit.com/walkband/@sundawning/million-midi-download-link-for-walkband'>Click to Support Now
+          </a>
+        </div>
+        <div id='supporters'>
+          <h2>Supporters
+          </h2>
+          <table>
+            <tr>
+              <th>Supporter
+              </th>
+              <th>Value
+              </th>
+              <th>Certificate
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <a href='https://steemit.com/@sundawning'>SunDawning
+                </a>
+              </th>
+              <th>0.000 SBD
+              </th>
+              <th>
+                <a href='https://steemd.com/b/23826627#a3ffd3e983e77a82f3c872d1b62eb262cb1d92af'>23826627
+                </a>
+              </th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </header>
+    <div>
+      <i>
+        <textarea id='shared-string' title='形如：来看我的作品http://app.visualmidi.com/player/index.jsp?midi2=2017-11-16/1510836681379&author=zwdzjspvz&name=country+rode' autocomplete='on' placeholder='Enter shared from WalkBand'></textarea>
+        <button id='submit' onclick='MILLION$clickToParse();'>Submit
+        </button>
+      </i>
+      <o id='result'></o>
+    </div>
+    <script>/**
+ * `shared-string'是随身乐队APP里点击分享后所获得的分享链接，形如：来看我的作品http://app.visualmidi.com/player/index.jsp?midi2=2017-11-16/1510836681379&author=zwdzjspvz&name=country+rode
+ * 返回值是一个字符串，是一个能直接下载相应音乐的midi链接。
+ */
+function MILLION$getMidiDownloadLink(sharedString) {
+    if (sharedString) {
+        var midiString = sharedString.match(/midi2=[^&]*/i);
+        var midiList = midiString[0].split('=');
+        return 'http://app.visualmidi.com/res/midi/' + midiList[1] + '.mid';
+    };
+};
+function MILLION$aLink(href) {
+    return '<a href=' + href + '>' + href + '</a>';
+};
+function MILLION$clickToParse() {
+    __PS_MV_REG = [];
+    return document.getElementById('result').innerHTML = MILLION$aLink(MILLION$getMidiDownloadLink(document.getElementById('shared-string').value));
+};
+function MILLION$flexTextarea(textarea) {
+    var marginTop;
+    var mirrorId = 'flex-textarea-mirror';
+    var submitId = 'submit';
+    if (!document.getElementById(mirrorId)) {
+        var createMirror = document.createElement('pre');
+        createMirror.id = mirrorId;
+        createMirror.style.display = 'none';
+        textarea.appendChild(createMirror);
+        textarea.style.overflow = 'hidden';
+        for (var attribute = null, _js_arrvar162 = ['onkeydown', 'onkeypress', 'onkeyup', 'ontouchstart'], _js_idx161 = 0; _js_idx161 < _js_arrvar162.length; _js_idx161 += 1) {
+            attribute = _js_arrvar162[_js_idx161];
+            textarea.setAttribute(attribute, 'javascript:' + 'MILLION$flexTextarea(this)');
+        };
+    };
+    var mirrorElement = document.getElementById(mirrorId);
+    var submitElement = document.getElementById(submitId);
+    mirrorElement.innerHTML = textarea.value;
+    submitElement.style.marginTop = (marginTop = textarea.scrollHeight - 34, marginTop < 0 ? 0 : marginTop) + 'px';
+    textarea.style.height = mirrorElement.offsetHeight + 'px';
+    __PS_MV_REG = [];
+    return textarea.style.height = textarea.scrollHeight + 'px';
+};
+function MILLION$styleDisplay(element) {
+    return element.style.display;
+};
+function MILLION$popup(element) {
+    return element.style.display = 'block';
+};
+function MILLION$closePopup(element) {
+    return element.style.display = 'none';
+};
+function MILLION$toggleSupport() {
+    var element = document.getElementById('support');
+    if (MILLION$styleDisplay(element) == 'block') {
+        __PS_MV_REG = [];
+        return MILLION$closePopup(element);
+    } else {
+        __PS_MV_REG = [];
+        return MILLION$popup(element);
+    };
+};
+function MILLION$getSupportDeadline() {
+    var request = new XMLHttpRequest();
+    var uri = 'https://api.steemit.com/';
+    request.open('post', uri, null);
+    request.send('{\"id\":1,\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":[\"database_api\",\"get_state\",[\"/image/@sundawning/3zmdt8\"]]}');
+    __PS_MV_REG = [];
+    return request.responseText;
+};
+function resultContent(response, authorPermlink) {
+    ['active_votes', 'pending_payout_value', 'vote_rshares'];
+    __PS_MV_REG = [];
+    return JSON.parse(response)['result']['content'][authorPermlink];
+};
+MILLION$flexTextarea(document.getElementById('shared-string'));
+    </script>
+    <style>body { background: #f2f2f2; font-size: 16px; }
+header { text-align: right; padding: 8px 0; }
+a { padding: 4px; color: #00a0e9; font-size: inherit; }
+a:hover { color: grey; }
+a:visited { color: grey; }
+#support { display: none; padding: 8px 0; }
+#supporters { text-align: center; }
+table { margin: auto; }
+table,th,td { border: 1px solid gray; }
+i { padding: 8px; display: flex; justify-content: center; }
+textarea { width: 66%; max-width: 480px; border: 1px solid; border-color: #125c95; border-radius: 4px; }
+button { width: 33%; max-width: 72px; max-height: 40px; background: #00a0e9; color: #f2f2f2; border-radius: 4px; border: none; font-weight: bold; font-size: inherit; }
+button:hover { background: #125c95; color: #f2f2f2; }
+o { padding: 8px 0; }
+
+    </style>
+  </body>
+</html>

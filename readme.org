@@ -1,0 +1,20 @@
+# ** readme.org
+
+
+# [[file:~/literate-programming/midi-download-link.org::*readme.org][readme.org:1]]
+Upvote，Follow或者Reblog我的文章，如果你想让我继续维护这个项目，就是这样。传送门：https://steemit.com/walkband/@sundawning/million-midi-download-link-for-walkband
+
+MILLION(MIdi downLoad LInk fOr walkbaNd)是一个用来下载手机应用随身乐队（WalkBand）里MIDI音乐的在线网页应用。
+
+[[http://on9g2lqza.bkt.clouddn.com/million.png]]
+
+1. 在WanlBand内点击并复制音乐的分享链接
+   形如：
+   #+BEGIN_EXAMPLE
+   来看我的作品http://app.visualmidi.com/player/index.jsp?midi2=2017-11-16/1510836681379&author=zwdzjspvz&name=country+rode
+   #+END_EXAMPLE
+2. 在浏览器里打开MILLION并粘贴链接
+   - 在线：https://sundawning.github.io/midi-download-link-for-walkband/million.html
+   - Github短网址：https://git.io/-million
+3. 确定之后，点击链接，保存MIDI文件到本地
+# readme.org:1 ends here

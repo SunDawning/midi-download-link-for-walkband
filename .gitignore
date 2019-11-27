@@ -1,0 +1,7 @@
+# ** .gitignore
+
+
+# [[file:~/literate-programming/midi-download-link.org::*.gitignore][.gitignore:1]]
+*.lisp
+*.asd
+# .gitignore:1 ends here
