@@ -89,8 +89,8 @@ function MILLION$flexTextarea(textarea) {
         createMirror.style.display = 'none';
         textarea.appendChild(createMirror);
         textarea.style.overflow = 'hidden';
-        for (var attribute = null, _js_arrvar162 = ['onkeydown', 'onkeypress', 'onkeyup', 'ontouchstart'], _js_idx161 = 0; _js_idx161 < _js_arrvar162.length; _js_idx161 += 1) {
-            attribute = _js_arrvar162[_js_idx161];
+        for (var attribute = null, _js_arrvar4 = ['onkeydown', 'onkeypress', 'onkeyup', 'ontouchstart'], _js_idx3 = 0; _js_idx3 < _js_arrvar4.length; _js_idx3 += 1) {
+            attribute = _js_arrvar4[_js_idx3];
             textarea.setAttribute(attribute, 'javascript:' + 'MILLION$flexTextarea(this)');
         };
     };
